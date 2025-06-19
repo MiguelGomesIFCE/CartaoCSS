@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cartão CSS</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(150deg, black, rgb(19, 19, 19));
+      font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    }
+
+    .giroCartao {
+      width: 500px;
+      height: 300px;
+      perspective: 1000px;
+    }
+
+    #box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .giroCartao:hover #box {
+      transform: rotateY(180deg);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .frente, .verso {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .frente {
+      background-color: rgb(240, 0, 0);
+      color: whitesmoke;
+      flex-direction: row;
+    }
+
+    .verso {
+      background-color: rgb(240, 0, 0);
+      color: whitesmoke;
+      transform: rotateY(180deg);
+      align-items: flex-start;
+      text-align: left;
+      padding: 50px;
+    }
+
+    .img-moldura {
+      width: 130px;
+      height: 130px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 3px solid #000000ed;
+      margin-right: 20px;
+    }
+
+    .nomeeprofissao {
+      text-align: left;
+      font-size: 21px;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .nome {
+      margin: 0;
+    }
+
+    .profissao {
+      margin: 4px 0 0 0;
+      font-size: 17px;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .linha-info {
+      display: flex;
+      gap: 5px;
+      margin: 4px 0;
+    }
+
+    .categoria {
+      font-size: 16px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .resposta {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .contatos {
+      margin-top: 10px;
+
+      font-weight: bold;
+      font-size: 16px; /* 1px maior */
+    }
+
+    .contatos a {
+      color: whitesmoke;
+      text-decoration: underline;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .contatos a:hover {
+      color: whitesmoke;
+      text-decoration: underline;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 12px;
+      color: whitesmoke;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="giroCartao">
+      <div id="box">
+        <div class="frente">
+          <div class="img-moldura">
+            <img src="fotom.jpg" alt="Foto de Miguel" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <div class="nomeeprofissao">
+            <h2 class="nome">Miguel Gomes Maia</h2>
+            <p class="profissao">Diretor de Filmes, Séries e Novelas</p>
+          </div>
+        </div>
+        <div class="verso">
+          <div class="resposta">Miguel Gomes Maia</div>
+
+          <div class="linha-info">
+            <div class="categoria">Profissão:</div>
+            <div class="resposta">Diretor de Filmes, Séries e Novelas</div>
+          </div>
+
+          <div class="contatos">Fale comigo:
+            <div class="linha-info">
+                <div class="categoria">Contato:</div>
+                <div class="resposta">(85) 98844-0088</div>
+            </div>
+            <div class="linha-info">
+                <div class="categoria">E-mail:</div>
+                <div class="resposta">gomesmiguel@aluno.ifce.edu.br</div>
+            </div>
+            <a href="https://github.com/MiguelGomesIFCE" target="_blank" rel="noopener noreferrer">Github</a>
+            <a href="https://www.instagram.com/miggomes13" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>&copy; Miguel Gomes, 2025.</footer>
+
+</body>
+</html>
